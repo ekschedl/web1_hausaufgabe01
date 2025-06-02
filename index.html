@@ -3,20 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kaffeehaus – MOKKA.</title>
+    <title>MOKKA Kaffeehaus Graz – Spezialitäten, Desserts & Atmosphäre</title>
+    <meta
+      name="description"
+      content="Besuche MOKKA – das Kaffeehaus in Graz mit Charakter: Spezialitätenkaffee, hausgemachte Desserts, nachhaltige Philosophie & gemütliches Ambiente."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- ========== HEADER ========== -->
     <header>
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Hauptnavigation">
         <div class="branding">
-          <a href="index.html" class="logo">
-            <img src="src/kaffee_tasse_weiss.png" alt="Logo" />
+          <a href="index.html" class="logo" aria-label="Startseite von MOKKA">
+            <img
+              src="src/kaffee_tasse_weiss.png"
+              alt="Logo von MOKKA – Kaffeehaus Graz"
+              loading="lazy"
+            />
           </a>
-          <span class="shopname">MOKKA.</span>
+          <span class="shopname" aria-hidden="true">MOKKA.</span>
         </div>
-
         <!-- Menü-Schalter -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label
@@ -28,19 +36,18 @@
           <span class="line line2"></span>
           <span class="line line3"></span>
         </label>
-
         <ul class="nav-links">
-          <li><a href="#produkte">Produkte</a></li>
           <li><a href="#ueber-uns">Über Uns</a></li>
+          <li><a href="menu.html">Menu</a></li>
           <li><a href="gallery.html">Galerie</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- ========== MAIN ========== -->
     <main>
-      <section class="hero-video">
+      <!-- <section class="hero-video">
         <video autoplay muted loop playsinline>
           <source src="src/133988-758552232_small (1).mp4" type="video/mp4" />
           Dein Browser unterstützt keine HTML5-Videos.
@@ -49,83 +56,102 @@
           <h1>MOKKA.</h1>
           <p>Ein Ort für echten Kaffeegenuss</p>
         </div>
-      </section>
+      </section> -->
 
       <!-- Über uns -->
-      <section id="ueber-uns" class="about-section">
-        <div class="about-container">
-          <img
-            src="src/ueber-uns.jpg"
-            alt="Kaffeeteam bei der Arbeit"
-            class="about-img"
-          />
-          <div class="about-text">
-            <h2>Über Uns</h2>
-            <p>
-              Willkommen im Kaffeehaus! Wir lieben Kaffee – fair, lokal und mit
-              Herz.
-            </p>
-            <p>
-              <strong>MOKKA.</strong> ist mehr als nur ein Kaffeehaus – es ist
-              ein Ort der Begegnung, des Genusses und der Inspiration. Seit
-              unserer Gründung im Jahr <strong>2019</strong> in Graz verbinden
-              wir traditionelles Handwerk mit modernen Geschmackserlebnissen.
-            </p>
-            <p>
-              Unsere Leidenschaft für hochwertigen Kaffee und feine Desserts
-              zeigt sich in jedem Detail: von sorgfältig ausgewählten Bohnen
-              über die kunstvolle Zubereitung bis zur liebevollen Atmosphäre.
-            </p>
-            <p>
-              Wir setzen auf <strong>nachhaltige Partnerschaften</strong> mit
-              kleinen Röstereien, regionale Zutaten und ein saisonales Menü, das
-              dich immer wieder überraschen wird.
-            </p>
-            <p>
-              Schau dir unsere <a href="#produkte">Kaffeespezialitäten</a> an
-              oder entdecke täglich neue Ideen in der
-              <a href="gallery.html">Galerie</a>. Und wenn du neugierig bist:
-              Unser <strong>Barista-Team</strong> freut sich immer, dir mehr
-              über Herkunft, Röstung und Aromen zu erzählen!
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="philosophie" class="philosophie-section">
-        <div class="philosophie-container">
-          <h2>🌱 Unsere Philosophie</h2>
-          <p>Was uns wichtig ist – auf einen Blick:</p>
-          <ul class="werte-liste">
-            <li>💚 Nachhaltigkeit & Regionalität</li>
-            <li>☕ Handwerk & Qualität</li>
-            <li>👫 Gemeinschaft & Gastfreundschaft</li>
-            <li>🌍 Fairer Handel & Transparenz</li>
-            <li>✨ Kreativität & Genusskultur</li>
-          </ul>
-        </div>
-      </section>
-    </main>
-    <!-- ========== SIDEBAR ========== -->
-    <aside class="sidebar">
-      <h3>Neu im Blog</h3>
-      <ul>
-        <li><a href="#">☕ 5 Tipps für den perfekten Espresso</a></li>
-        <li><a href="#">🌿 Bio-Kaffee aus Äthiopien im Sortiment</a></li>
-        <li><a href="#">🎉 Latte-Art-Workshop: Jetzt anmelden!</a></li>
-      </ul>
-
-      <section class="dessert">
-        <h4>☕ Dessert des Tages</h4>
+      <section id="ueber-uns" class="about-grid">
+        <!-- Erste Zeile: Bild | Text -->
         <img
-          id="dessert-img"
-          alt="Dessert"
-          style="max-width: 100%; max-height: 400px"
+          src="src/mokka_cafe.png"
+          alt="Gemütliches MOKKA Kaffeehaus"
+          loading="lazy"
+          class="about-img sticky-img"
         />
+        <div class="about-text">
+          <h2>Über Uns</h2>
+
+          <p>
+            <strong>MOKKA.</strong> – dein Kaffeehaus mit Herz. Fair, lokal,
+            voller Leidenschaft.
+          </p>
+          <p>
+            Seit 2019 verbinden wir in Graz traditionelles Handwerk mit modernen
+            Geschmackserlebnissen.
+          </p>
+          <p>
+            Unser Café ist ein Ort zum Ankommen und Wohlfühlen – mit warmen
+            Farben, natürlichen Materialien und liebevollen Details.
+          </p>
+          <p>
+            Hochwertige Bohnen, kreative Desserts und eine gemütliche Atmosphäre
+            – bei uns wirst du mehr als nur Kaffee finden.
+          </p>
+        </div>
+
+        <!-- Zweite Zeile: Text | Bild -->
+        <img
+          src="src/team.png"
+          alt="Unser freundliches Team bei MOKKA"
+          loading="lazy"
+          class="about-img"
+        />
+        <div class="about-text">
+          <p>
+            Wir arbeiten mit kleinen Röstereien, die auf Qualität und faire
+            Bedingungen setzen – jede Bohne ist mit Bedacht gewählt.
+          </p>
+          <p>
+            Auch in der Küche zählt Regionalität: ob hausgemachte Kuchen oder
+            vegane Snacks – frisch und lokal.
+          </p>
+          <p>
+            Unser Team lebt Kaffee – mit Herz, Know-how und einem Lächeln. Komm
+            vorbei und spür's selbst!
+          </p>
+        </div>
+      </section>
+
+      <!-- ========== Philosophie ========== -->
+      <section id="philosophie" class="philosophie-section">
+        <h2>Unsere Philosophie</h2>
+
+        <img
+          src="src/sprosse2.png"
+          alt="Symbol für Nachhaltigkeit"
+          class="bohne-icon"
+        />
+        <span class="philosophie-wort">Nachhaltigkeit</span>
+
+        <img
+          src="src/gemeinsam.png"
+          alt="Symbol für Gemeinschaft"
+          class="bohne-icon"
+        />
+        <span class="philosophie-wort">Gemeinschaft</span>
+
+        <img src="src/genuss.png" alt="Symbol für Genuss" class="bohne-icon" />
+        <span class="philosophie-wort">Genuss</span>
+      </section>
+
+      <!-- ========== Desserts ========== -->
+      <section class="dessert">
+        <h2>Dessert des Tages</h2>
+        <img id="dessert-img" alt="Dessert" loading="lazy" />
         <p id="dessert-name">Lade Dessert...</p>
         <p id="dessert-beschreibung">Lade Beschreibung...</p>
         <p id="bild-credit"></p>
       </section>
-    </aside>
+
+      <!-- ========== SIDEBAR ========== -->
+      <aside class="sidebar">
+        <h3>Neu im Blog</h3>
+        <ul>
+          <li><a href="#">☕ 5 Tipps für den perfekten Espresso</a></li>
+          <li><a href="#">🌿 Bio-Kaffee aus Äthiopien im Sortiment</a></li>
+          <li><a href="#">🎉 Latte-Art-Workshop: Jetzt anmelden!</a></li>
+        </ul>
+      </aside>
+    </main>
 
     <!-- ========== FOOTER ========== -->
     <footer id="kontakt">
@@ -134,14 +160,14 @@
     </footer>
 
     <!-- ========== Optionales JS für Mobilmenü ========== -->
-    <script>
+    <!-- <script>
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
 
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
       });
-    </script>
+    </script> -->
 
     <script>
       async function ladeDessertBild() {
@@ -153,7 +179,8 @@
 
           document.getElementById("dessert-img").src = bild.urls.regular;
           document.getElementById("dessert-img").alt =
-            bild.alt_description || "Dessert";
+            bild.alt_description || "Foto eines Desserts";
+
           document.getElementById("dessert-name").textContent =
             bild.alt_description || "Unbekanntes Dessert";
           document.getElementById("dessert-beschreibung").textContent =
