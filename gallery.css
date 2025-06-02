@@ -1,0 +1,157 @@
+/* ===================== Farbvariablen ===================== */
+:root {
+  --color-primary: #4a2c2a; /* Dunkelbraun */
+  --color-secondary: #c2957a; /* Helles Kaffeebraun */
+  --color-accent: #ffcc99; /* Beiger Akzent */
+  --color-hover: #a9744f; /* Dunklerer Akzent */
+  --color-white: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ===================== Galerie-Bereich ===================== */
+.gallery-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-primary);
+}
+
+/* ===================== Swiper Grundlayout ===================== */
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem 0 3rem;
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-white);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.5;
+  transform: scale(0.85);
+}
+
+/* ===================== Bild im Slide ===================== */
+.slide-content img {
+  max-height: 300px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px var(--color-shadow);
+  transition: transform 0.3s ease;
+}
+
+.slide-content img:hover {
+  transform: scale(1.03);
+}
+
+/* ===================== Bildbeschriftung ===================== */
+.caption {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+/* ===================== Swiper Pagination ===================== */
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: block !important;
+  z-index: 11;
+  top: 18rem !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #eee !important; /* sehr helles Grau */
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-secondary) !important;
+  opacity: 1;
+}
+
+/* ===================== Swiper Pfeile (versteckt bis 600px) ===================== */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+/* ===================== Pfeile ab 600px anzeigen ===================== */
+@media (min-width: 600px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: transparent; /* Kein Hintergrund */
+    border: none;
+    box-shadow: none;
+    display: flex !important;
+    width: 36px;
+    height: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: var(--color-accent) !important;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-accent);
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    color: var(--color-hover) !important;
+  }
+}
+
+/* ===================== Mobile (bis 450px): kleinere Bilder, kleinere Schrift ===================== */
+@media (max-width: 600px) {
+  .slide-content img {
+    max-height: 200px;
+  }
+
+  .caption {
+    font-size: 0.9rem;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: block !important;
+    z-index: 11;
+    top: 12rem !important;
+  }
+}

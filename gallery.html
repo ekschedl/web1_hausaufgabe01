@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie – MOKKA.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="navbar">
+        <div class="branding">
+          <a href="index.html" class="logo">
+            <img src="src/kaffee_tasse_weiss.png" alt="Logo" />
+          </a>
+          <span class="shopname">MOKKA.</span>
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label
+          for="menu-toggle"
+          class="menu-icon"
+          aria-label="Menü öffnen/schließen"
+        >
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </label>
+
+        <ul class="nav-links">
+          <li><a href="index.html#produkte">Produkte</a></li>
+          <li><a href="index.html#ueber-uns">Über Uns</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HAUPTBEREICH: Galerie -->
+    <main>
+      <section class="gallery-section">
+        <h2>Unsere Galerie</h2>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/espresso.jpg" alt="Espresso" />
+                <p class="caption">Espresso – kräftig & intensiv</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/capuccino.jpg" alt="Cappuccino" />
+                <p class="caption">Cappuccino – cremig & klassisch</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/latte.jpg" alt="Latte" />
+                <p class="caption">Latte – mild & milchig</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/flatwhite.jpg" alt="Flat White" />
+                <p class="caption">Flat White – sanft & harmonisch</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/americano.jpg" alt="Americano" />
+                <p class="caption">Americano – leicht & ausgewogen</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/macchiato.jpg" alt="Macchiato" />
+                <p class="caption">Macchiato – Espresso mit Milchtupfer</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/mocha.jpg" alt="Mocha" />
+                <p class="caption">Mocha – schokoladiger Genuss</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="src/matcha.jpg" alt="Matcha" />
+                <p class="caption">Matcha – grün & belebend</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination & optional: Pfeile -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="kontakt">
+      <p>&copy; 2025 MOKKA. Alle Rechte vorbehalten.</p>
+      <p>Kontakt: <a href="mailto:info@kaffeehaus.at">info@kaffeehaus.at</a></p>
+    </footer>
+
+    <!-- Swiper Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        loop: true,
+        spaceBetween: 30,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        effect: "coverflow",
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2,
+          slideShadows: false,
+        },
+      });
+
+      // 🛑 Autoplay pausieren bei Hover
+      const swiperContainer = document.querySelector(".swiper");
+
+      swiperContainer.addEventListener("mouseenter", () => {
+        swiper.autoplay.stop();
+      });
+
+      swiperContainer.addEventListener("mouseleave", () => {
+        swiper.autoplay.start();
+      });
+    </script>
+  </body>
+</html>
