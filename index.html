@@ -50,71 +50,59 @@
           <p>Ein Ort für echten Kaffeegenuss</p>
         </div>
       </section>
-      <!-- Abschnitt Über Uns -->
-      <section id="ueber-uns">
-        <h2>Über Uns</h2>
-        <p>
-          Willkommen im Kaffeehaus! Wir lieben Kaffee – fair, lokal und mit
-          Herz.
-        </p>
+
+      <!-- Über uns -->
+      <section id="ueber-uns" class="about-section">
+        <div class="about-container">
+          <img
+            src="src/ueber-uns.jpg"
+            alt="Kaffeeteam bei der Arbeit"
+            class="about-img"
+          />
+          <div class="about-text">
+            <h2>Über Uns</h2>
+            <p>
+              Willkommen im Kaffeehaus! Wir lieben Kaffee – fair, lokal und mit
+              Herz.
+            </p>
+            <p>
+              <strong>MOKKA.</strong> ist mehr als nur ein Kaffeehaus – es ist
+              ein Ort der Begegnung, des Genusses und der Inspiration. Seit
+              unserer Gründung im Jahr <strong>2019</strong> in Graz verbinden
+              wir traditionelles Handwerk mit modernen Geschmackserlebnissen.
+            </p>
+            <p>
+              Unsere Leidenschaft für hochwertigen Kaffee und feine Desserts
+              zeigt sich in jedem Detail: von sorgfältig ausgewählten Bohnen
+              über die kunstvolle Zubereitung bis zur liebevollen Atmosphäre.
+            </p>
+            <p>
+              Wir setzen auf <strong>nachhaltige Partnerschaften</strong> mit
+              kleinen Röstereien, regionale Zutaten und ein saisonales Menü, das
+              dich immer wieder überraschen wird.
+            </p>
+            <p>
+              Schau dir unsere <a href="#produkte">Kaffeespezialitäten</a> an
+              oder entdecke täglich neue Ideen in der
+              <a href="gallery.html">Galerie</a>. Und wenn du neugierig bist:
+              Unser <strong>Barista-Team</strong> freut sich immer, dir mehr
+              über Herkunft, Röstung und Aromen zu erzählen!
+            </p>
+          </div>
+        </div>
       </section>
-
-      <!-- Produkte -->
-      <section id="produkte">
-        <h1>Unsere Kaffeespezialitäten</h1>
-
-        <article>
-          <h2>Espresso</h2>
-          <p>
-            Ein intensiver, starker Kaffee – perfekt für den schnellen Genuss.
-          </p>
-        </article>
-
-        <article>
-          <h2>Cappuccino</h2>
-          <p>
-            Espresso mit cremigem Milchschaum – ein italienischer Klassiker.
-          </p>
-        </article>
-
-        <article>
-          <h2>Latte Macchiato</h2>
-          <p>
-            Sanfte Milch trifft kräftigen Espresso – ein Genuss in Schichten.
-          </p>
-        </article>
-
-        <article>
-          <h2>Americano</h2>
-          <p>Espresso mit heißem Wasser verlängert – mild und aromatisch.</p>
-        </article>
-
-        <article>
-          <h2>Flat White</h2>
-          <p>Espresso mit samtig-feinem Mikroschaum – cremig und stark.</p>
-        </article>
-
-        <article>
-          <h2>Filterkaffee</h2>
-          <p>
-            Traditionell aufgebrüht – klar im Geschmack, perfekt für Genießer.
-          </p>
-        </article>
-
-        <article>
-          <h2>Cold Brew</h2>
-          <p>
-            Kalt extrahierter Kaffee – erfrischend, mild und besonders
-            verträglich.
-          </p>
-        </article>
-
-        <article>
-          <h2>Mokka</h2>
-          <p>
-            Würzig-süß und orientalisch – ein Hauch von 1001 Nacht in der Tasse.
-          </p>
-        </article>
+      <section id="philosophie" class="philosophie-section">
+        <div class="philosophie-container">
+          <h2>🌱 Unsere Philosophie</h2>
+          <p>Was uns wichtig ist – auf einen Blick:</p>
+          <ul class="werte-liste">
+            <li>💚 Nachhaltigkeit & Regionalität</li>
+            <li>☕ Handwerk & Qualität</li>
+            <li>👫 Gemeinschaft & Gastfreundschaft</li>
+            <li>🌍 Fairer Handel & Transparenz</li>
+            <li>✨ Kreativität & Genusskultur</li>
+          </ul>
+        </div>
       </section>
     </main>
     <!-- ========== SIDEBAR ========== -->
@@ -125,6 +113,18 @@
         <li><a href="#">🌿 Bio-Kaffee aus Äthiopien im Sortiment</a></li>
         <li><a href="#">🎉 Latte-Art-Workshop: Jetzt anmelden!</a></li>
       </ul>
+
+      <section class="dessert">
+        <h4>☕ Dessert des Tages</h4>
+        <img
+          id="dessert-img"
+          alt="Dessert"
+          style="max-width: 100%; max-height: 400px"
+        />
+        <p id="dessert-name">Lade Dessert...</p>
+        <p id="dessert-beschreibung">Lade Beschreibung...</p>
+        <p id="bild-credit"></p>
+      </section>
     </aside>
 
     <!-- ========== FOOTER ========== -->
@@ -141,6 +141,37 @@
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
       });
+    </script>
+
+    <script>
+      async function ladeDessertBild() {
+        try {
+          const response = await fetch(
+            "https://api.unsplash.com/photos/random?query=dessert&client_id=sxkQE1DxzX5T0WPsF7v3LUjMDBdsajqJLrgXflhsW80"
+          );
+          const bild = await response.json();
+
+          document.getElementById("dessert-img").src = bild.urls.regular;
+          document.getElementById("dessert-img").alt =
+            bild.alt_description || "Dessert";
+          document.getElementById("dessert-name").textContent =
+            bild.alt_description || "Unbekanntes Dessert";
+          document.getElementById("dessert-beschreibung").textContent =
+            "Frisch serviert für deinen Kaffeegenuss.";
+
+          document.getElementById(
+            "bild-credit"
+          ).innerHTML = `Foto von <a href="${bild.user.links.html}?utm_source=deinprojekt&utm_medium=referral" target="_blank">${bild.user.name}</a> auf <a href="https://unsplash.com" target="_blank">Unsplash</a>`;
+        } catch (error) {
+          document.getElementById("dessert-name").textContent =
+            "Fehler beim Laden";
+          document.getElementById("dessert-beschreibung").textContent = "";
+          document.getElementById("bild-credit").textContent =
+            "Bild konnte nicht geladen werden.";
+        }
+      }
+
+      ladeDessertBild();
     </script>
   </body>
 </html>
