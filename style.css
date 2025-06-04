@@ -1,13 +1,15 @@
 :root {
-  --braun-dunkel: #4a2c2a;
-  --braun-hell: #caa978;
-  --text-standard: #5a403d;
-  --hintergrund: #fff8f3;
-  --hover: #ffcc99;
-  --weiß: #ffffff;
-  --grau-text: #998b85;
-  --philosophie-hintergrund: #f5efe6;
-  --schatten: rgba(0, 0, 0, 0.1);
+  --primary-color: #522310;
+
+  --secondary-color: #c2957a;
+  --text-color: #5a403d;
+  --muted-text-color: #998b85;
+
+  --background-color: #fff8f3;
+  --white: #ffffff;
+
+  --accent-color: #ffcc99;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 * {

@@ -1,26 +1,24 @@
 /* ===================== Farbvariablen ===================== */
 :root {
-  --color-primary: #4a2c2a; /* Dunkelbraun */
-  --color-secondary: #c2957a; /* Helles Kaffeebraun */
-  --color-accent: #ffcc99; /* Beiger Akzent */
-  --color-hover: #a9744f; /* Dunklerer Akzent */
-  --color-white: #ffffff;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --primary-color: #522310;
+
+  --secondary-color: #c2957a;
+  --text-color: #5a403d;
+  --muted-text-color: #998b85;
+
+  --background-color: #fff8f3;
+  --white: #ffffff;
+
+  --accent-color: #ffcc99;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* ===================== Galerie-Bereich ===================== */
 .gallery-section {
   max-width: 1200px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   text-align: center;
-}
-
-.gallery-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-family: "Poppins", sans-serif;
-  color: var(--color-primary);
 }
 
 /* ===================== Swiper Grundlayout ===================== */
@@ -40,9 +38,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--color-white);
-  padding: 1rem;
-  border-radius: 12px;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
@@ -53,11 +48,12 @@
 
 /* ===================== Bild im Slide ===================== */
 .slide-content img {
-  max-height: 300px;
-  width: auto;
+  max-width: 400px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px var(--color-shadow);
+  object-position: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px var(--shadow);
   transition: transform 0.3s ease;
 }
 
@@ -67,35 +63,32 @@
 
 /* ===================== Bildbeschriftung ===================== */
 .caption {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
+  margin-top: 1.2rem !important;
+  font-size: 1.3rem !important;
+  color: var(--text-color);
   font-family: "Poppins", sans-serif;
-  text-align: center;
 }
 
 /* ===================== Swiper Pagination ===================== */
 .swiper-pagination {
   position: absolute;
-  bottom: 10px;
   left: 0;
   right: 0;
   text-align: center;
   display: block !important;
   z-index: 11;
-  top: 18rem !important;
+  top: 16.8rem !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: #eee !important; /* sehr helles Grau */
-  opacity: 0.6;
+  background-color: var(--white) !important;
+  opacity: 0.8;
   cursor: default;
   pointer-events: none;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--color-secondary) !important;
+  background-color: var(--secondary-color) !important;
   opacity: 1;
 }
 
@@ -109,7 +102,7 @@
 @media (min-width: 600px) {
   .swiper-button-prev,
   .swiper-button-next {
-    background-color: transparent; /* Kein Hintergrund */
+    background-color: transparent;
     border: none;
     box-shadow: none;
     display: flex !important;
@@ -118,19 +111,18 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    color: var(--color-accent) !important;
+    color: var(--text-color) !important;
   }
 
   .swiper-button-prev::after,
   .swiper-button-next::after {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--color-accent);
   }
 
   .swiper-button-prev:hover,
   .swiper-button-next:hover {
-    color: var(--color-hover) !important;
+    color: var(--secondary-color) !important;
   }
 }
 
@@ -139,19 +131,13 @@
   .slide-content img {
     max-height: 200px;
   }
-
-  .caption {
-    font-size: 0.9rem;
-  }
-
   .swiper-pagination {
     position: absolute;
-    bottom: 10px;
     left: 0;
     right: 0;
     text-align: center;
     display: block !important;
     z-index: 11;
-    top: 12rem !important;
+    top: 10.6rem !important;
   }
 }
