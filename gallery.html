@@ -14,14 +14,19 @@
   <body>
     <!-- HEADER -->
     <header>
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Hauptnavigation">
         <div class="branding">
-          <a href="index.html" class="logo">
-            <img src="src/kaffee_tasse_weiss.png" alt="Logo" />
+          <a href="index.html" class="logo" aria-label="Startseite von MOKKA">
+            <img
+              src="src/kaffee_tasse_weiss.png"
+              alt="Logo von MOKKA – Kaffeehaus Graz"
+              aria-hidden="true"
+              loading="lazy"
+            />
+            <span class="shopname">MOKKA.</span>
           </a>
-          <span class="shopname">MOKKA.</span>
         </div>
-
+        <!-- Menü-Schalter -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label
           for="menu-toggle"
@@ -32,12 +37,10 @@
           <span class="line line2"></span>
           <span class="line line3"></span>
         </label>
-
         <ul class="nav-links">
-          <li><a href="index.html#produkte">Produkte</a></li>
-          <li><a href="index.html#ueber-uns">Über Uns</a></li>
-          <li><a href="index.html#kontakt">Kontakt</a></li>
-          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="index.html">Über Uns</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </header>
