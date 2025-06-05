@@ -1,13 +1,11 @@
 :root {
   --primary-color: #522310;
-
   --secondary-color: #c2957a;
   --text-color: #5a403d;
   --muted-text-color: #998b85;
-
-  --background-color: #fff8f3;
+  --background-color: #fefdfc;
   --white: #ffffff;
-
+  --white-beige: #e4d3c7;
   --accent-color: #ffcc99;
   --shadow: rgba(0, 0, 0, 0.1);
 }
@@ -20,8 +18,8 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background-color: var(--hintergrund);
-  color: var(--text-standard);
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
   font-size: 1.2rem;
 }
@@ -48,13 +46,19 @@ a {
   color: inherit;
 }
 
-/* ====== NAVBAR ========= */
+img {
+  border-radius: 5px;
+}
+header,
+footer {
+  min-width: 300px;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--braun-dunkel);
-  color: var(--weiß);
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 1.5rem;
   height: 110px;
   position: relative;
@@ -84,7 +88,7 @@ a {
 }
 
 .shopname:hover {
-  color: var(--hover);
+  color: var(--accent-color);
 }
 
 .menu-toggle {
@@ -102,7 +106,7 @@ a {
 
 .line {
   height: 3px;
-  background-color: var(--weiß);
+  background-color: var(--white);
   border-radius: 2px;
   transition: all 0.4s ease;
 }
@@ -114,7 +118,7 @@ a {
 }
 
 .nav-links a {
-  color: var(--weiß);
+  color: var(--white);
   letter-spacing: 0.1em;
   transition: color 0.3s ease;
   text-transform: uppercase;
@@ -122,7 +126,7 @@ a {
 }
 
 .nav-links a:hover {
-  color: var(--hover);
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
@@ -134,7 +138,7 @@ a {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--braun-dunkel);
+    background-color: var(--primary-color);
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -161,56 +165,6 @@ a {
   }
 }
 
-/* ====== HERO VIDEO ====== */
-.hero-video {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  overflow: hidden;
-}
-
-.hero-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(1.2) contrast(1.15);
-}
-
-.hero-video::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(80, 50, 30, 0.2),
-    rgba(40, 20, 10, 0.5)
-  );
-  pointer-events: none;
-  mix-blend-mode: multiply;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--weiß-beige);
-  text-align: center;
-  text-shadow: 2px 2px 8px var(--schatten);
-}
-
-.video-overlay h1 {
-  font-size: 3rem;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.video-overlay p {
-  font-size: 1.3rem;
-  margin-top: 0.6rem;
-}
-
-/* ====== ABOUT GRID ===== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -223,15 +177,12 @@ a {
   height: auto;
   object-fit: cover;
   display: block;
-  border-radius: 0;
 }
 
 @media (min-width: 992px) {
   .about-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "text1 img1"
-      "img2 text2";
+    grid-template-areas: "text1 img1" "img2 text2";
     align-items: start;
   }
 
@@ -252,15 +203,13 @@ a {
   }
 }
 
-/* ====== Philosophie ========== */
 .philosophie-section {
-  background-color: var(--philosophie-hintergrund);
+  background-color: var(--white-beige);
   padding: 2rem 1.5rem;
   margin: 3rem auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px var(--schatten);
+  box-shadow: 0 2px 10px var(--shadow);
   text-align: center;
-  color: var(--braun-dunkel);
+  color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -268,10 +217,8 @@ a {
 }
 
 .bohne-icon {
-  width: 42px;
+  width: 4rem;
   height: auto;
-  opacity: 0.9;
-  filter: brightness(0.95) contrast(1.05);
 }
 
 .philosophie-wort {
@@ -281,7 +228,6 @@ a {
   font-weight: 400;
 }
 
-/* ====== DESSERT ========= */
 .dessert {
   text-align: center;
   margin: 2rem auto;
@@ -290,7 +236,7 @@ a {
 }
 
 .dessert img {
-  box-shadow: 0 4px 20px var(--schatten);
+  box-shadow: 0 4px 20px var(--shadow);
   margin: 1rem 0;
   width: 100%;
   height: auto;
@@ -299,7 +245,7 @@ a {
 
 #bild-credit {
   font-size: 0.9rem;
-  color: var(--grau-text);
+  color: var(--muted-text-color);
   top: -20px;
   position: relative;
 }
@@ -317,55 +263,16 @@ a {
 
 #dessert-beschreibung {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
 }
-
-/* ====== SIDEBAR ========= */
-/* aside.sidebar {
-  background-color: var(--braun-hell);
-  padding: 2rem 1.5rem;
-  color: var(--weiß);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sidebar li {
-  margin-bottom: 0.6rem;
-}
-
-.sidebar a {
-  color: var(--braun-dunkel);
-  font-weight: 500;
-}
-
-.sidebar a:hover {
-  text-decoration: underline;
-}
-
-@media (min-width: 992px) {
-  .sidebar {
-    flex: 1;
-    top: 100px;
-  }
-} */
 
 aside.sidebar {
-  background-color: var(--weiß-beige);
-  color: var(--braun-dunkel);
-  border: 2px dashed var(--braun-dunkel);
-  border-radius: 12px;
+  background-color: var(--white-beige);
+  color: var(--primary-color);
+  border: 2px dashed var(--primary-color);
+  border-radius: 5px;
   padding: 2rem 1.5rem;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
-  transform: rotate(-1.5deg);
-  font-family: "Segoe UI", sans-serif;
-  max-width: 300px;
+  max-width: 250px;
   margin: 2rem auto;
   text-align: center;
 }
@@ -389,12 +296,12 @@ aside.sidebar {
   margin-top: 1rem;
   font-size: 1.3rem;
   letter-spacing: 0.3em;
-  color: var(--text-kredit);
+  color: var(--muted-text-color);
 }
-/* ====== FOOTER ========== */
+
 footer {
-  background-color: var(--braun-dunkel);
-  color: var(--weiß);
+  background-color: var(--primary-color);
+  color: var(--white);
   text-align: center;
   padding: 1.5rem;
   height: 100px;
@@ -407,10 +314,97 @@ footer {
 }
 
 footer a {
-  color: var(--hover);
+  color: var(--accent-color);
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* =====  Menü===== */
+/* ===== Menü-Styling ===== */
+.menu-section {
+  background-color: #fffdfb;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.menu-card {
+  background-color: #ffffff;
+  border: 1px solid #f0eae4;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.menu-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.menu-card ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.menu-card li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(180, 160, 140, 0.15);
+  padding-bottom: 0.4rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.menu-card li span:last-child {
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+/* ===== Sidebar – Sammelpass ===== */
+.sidebar {
+  background-color: var(--white-beige);
+  border: 2px dashed var(--secondary-color);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+  text-align: center;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.sidebar h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sidebar p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.sidebar p::after {
+  content: "☕☕☕☕☕☕☕☕☕☕ ➤ 🎁";
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--muted-text-color);
+  letter-spacing: 0.2em;
 }
