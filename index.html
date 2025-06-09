@@ -58,7 +58,7 @@
           class="about-img sticky-img"
         />
         <div class="about-text">
-          <h2>Über Uns</h2>
+          <h1>Über Uns</h1>
 
           <p>
             Ein Kaffeehaus mit Herz – fair, lokal und voller Leidenschaft. Seit
@@ -87,23 +87,25 @@
             Bedingungen setzen – jede Bohne ist mit Bedacht gewählt.
           </p>
           <p>
-            Auch in der Küche zählt Regionalität: ob hausgemachte Kuchen oder
-            vegane Snacks – frisch und lokal.
+            Auch in der Küche zählt Regionalität: hausgemachtes Brot für unsere
+            Toasts, dazu einzigartige, geschmacksvolle Kreationen – mit Fleisch,
+            Fisch, vegetarisch oder vegan. Für jeden Geschmack das Richtige!
           </p>
           <p>
             Unser Team lebt Kaffee – mit Herz, Know-how und einem Lächeln. Komm
-            vorbei und spür's selbst!
+            vorbei und spür’s selbst!
           </p>
         </div>
       </section>
 
       <!-- ========== Philosophie ========== -->
-      <section id="philosophie" class="philosophie-section">
+      <section id="philosophie" class="philosophie-section fade-in-up">
         <h2>Unsere Philosophie</h2>
 
         <img
           src="src/sprosse2.png"
           alt="Symbol für Nachhaltigkeit"
+          loading="lazy"
           class="bohne-icon"
         />
         <span class="philosophie-wort">Nachhaltigkeit</span>
@@ -111,11 +113,17 @@
         <img
           src="src/gemeinsam.png"
           alt="Symbol für Gemeinschaft"
+          loading="lazy"
           class="bohne-icon"
         />
         <span class="philosophie-wort">Gemeinschaft</span>
 
-        <img src="src/genuss.png" alt="Symbol für Genuss" class="bohne-icon" />
+        <img
+          src="src/genuss.png"
+          alt="Symbol für Genuss"
+          class="bohne-icon"
+          loading="lazy"
+        />
         <span class="philosophie-wort">Genuss</span>
       </section>
 
@@ -130,62 +138,55 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer id="kontakt">
-      <p>&copy; 2025 MOKKA. Alle Rechte vorbehalten.</p>
-      <p>Kontakt: <a href="mailto:hello@kmokka.at">info@kaffeehaus.at</a></p>
+    <footer>
+      <p>&copy; 2025 <strong>MOKKA.</strong> Alle Rechte vorbehalten.</p>
+      <p>
+        Kontakt:
+        <a href="mailto:info@kaffeehaus.at">info@kaffeehaus.at</a>
+      </p>
+
+      <ul class="social-links" aria-label="Social Media">
+        <li>
+          <a
+            href="https://www.instagram.com/mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf Instagram"
+          >
+            <img
+              src="src/icon-instagram.svg"
+              alt="Instagram"
+              class="social-icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf Facebook"
+          >
+            <img
+              src="src/icon-facebook.svg"
+              alt="Facebook"
+              class="social-icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.tiktok.com/@mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf TikTok"
+          >
+            <img src="src/icon-tiktok.svg" alt="TikTok" class="social-icon" />
+          </a>
+        </li>
+      </ul>
     </footer>
 
-    <!-- ========== Optionales JS für Mobilmenü ========== -->
-    <!-- <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-    </script> -->
-
-    <script>
-      async function ladeDessertBild() {
-        try {
-          const response = await fetch(
-            "https://api.unsplash.com/photos/random?query=dessert&client_id=sxkQE1DxzX5T0WPsF7v3LUjMDBdsajqJLrgXflhsW80"
-          );
-          const bild = await response.json();
-
-          if (bild && bild.urls && bild.urls.regular) {
-            const altText = bild.alt_description
-              ? bild.alt_description.charAt(0).toUpperCase() +
-                bild.alt_description.slice(1)
-              : "Überraschung aus der Vitrine";
-
-            document.getElementById("dessert-img").src = bild.urls.regular;
-            document.getElementById("dessert-img").alt =
-              bild.alt_description || "Foto eines Desserts";
-            document.getElementById("dessert-name").textContent = altText;
-            document.getElementById("dessert-beschreibung").textContent =
-              "Frisch serviert für deinen Kaffeegenuss.";
-            document.getElementById(
-              "bild-credit"
-            ).innerHTML = `Foto von <a href="${bild.user.links.html}?utm_source=deinprojekt&utm_medium=referral" target="_blank">${bild.user.name}</a> auf <a href="https://unsplash.com" target="_blank">Unsplash</a>`;
-          } else {
-            throw new Error("Ungültige Antwort");
-          }
-        } catch (error) {
-          // Fallback bei Fehler
-          document.getElementById("dessert-img").src =
-            "src/fallback-dessert.jpg";
-          document.getElementById("dessert-img").alt = "Hausgemachtes Dessert";
-          document.getElementById("dessert-name").textContent =
-            "Kuchen der Saison";
-          document.getElementById("dessert-beschreibung").textContent =
-            "Mit Liebe gebacken – direkt aus unserer Küche.";
-          document.getElementById("bild-credit").textContent =
-            "Foto: MOKKA-Team";
-        }
-      }
-
-      ladeDessertBild();
-    </script>
+    <script src="script.js" defer></script>
   </body>
 </html>

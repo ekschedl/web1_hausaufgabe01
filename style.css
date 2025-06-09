@@ -1,3 +1,4 @@
+/* ===== Root-Variablen ===== */
 :root {
   --primary-color: #522310;
   --secondary-color: #c2957a;
@@ -5,15 +6,20 @@
   --muted-text-color: #998b85;
   --background-color: #fefdfc;
   --white: #ffffff;
-  --white-beige: #e4d3c7;
+  --white-beige: #e4cebf69;
   --accent-color: #ffcc99;
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
+/* ===== Allgemeines Reset und Basislayout ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,6 +28,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   font-size: 1.2rem;
+  min-width: 290px;
 }
 
 h1,
@@ -31,6 +38,10 @@ h3 {
   font-weight: 600;
   margin-bottom: 1rem;
   letter-spacing: 0.1em;
+}
+
+h1 {
+  font-size: 1.6rem;
 }
 
 h2 {
@@ -49,10 +60,17 @@ a {
 img {
   border-radius: 5px;
 }
-header,
-footer {
-  min-width: 300px;
+
+/* ===== Globaler Fokus-Stil ===== */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px dashed var(--accent-color);
+  outline-offset: 2px;
 }
+
+/* ===== Navigation (Navbar) ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -60,7 +78,7 @@ footer {
   background-color: var(--primary-color);
   color: var(--white);
   padding: 1.5rem;
-  height: 110px;
+  height: 120px;
   position: relative;
   z-index: 1000;
 }
@@ -84,7 +102,7 @@ footer {
 .shopname {
   font-size: 1.4rem;
   font-weight: bold;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 
 .shopname:hover {
@@ -129,6 +147,7 @@ footer {
   color: var(--accent-color);
 }
 
+/* ===== Responsive Navigation (Media Query) ===== */
 @media (max-width: 768px) {
   .menu-icon {
     display: flex;
@@ -165,6 +184,7 @@ footer {
   }
 }
 
+/* ===== Über Uns – Grid Layout ===== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -179,6 +199,11 @@ footer {
   display: block;
 }
 
+.about-grid p {
+  margin-bottom: 10px;
+}
+
+/* ===== Über Uns – Grid Layout (ab 992px) ===== */
 @media (min-width: 992px) {
   .about-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -203,6 +228,7 @@ footer {
   }
 }
 
+/* ===== Philosophie-Section ===== */
 .philosophie-section {
   background-color: var(--white-beige);
   padding: 2rem 1.5rem;
@@ -228,6 +254,7 @@ footer {
   font-weight: 400;
 }
 
+/* ===== Dessert-Bereich ===== */
 .dessert {
   text-align: center;
   margin: 2rem auto;
@@ -265,46 +292,13 @@ footer {
   font-size: 1.2rem;
 }
 
-aside.sidebar {
-  background-color: var(--white-beige);
-  color: var(--primary-color);
-  border: 2px dashed var(--primary-color);
-  border-radius: 5px;
-  padding: 2rem 1.5rem;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
-  max-width: 250px;
-  margin: 2rem auto;
-  text-align: center;
-}
-
-.sidebar h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.sidebar p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  position: relative;
-}
-
-.sidebar p::after {
-  content: "☕☕☕☕☕☕☕☕☕☕ ➤ 🎁";
-  display: block;
-  margin-top: 1rem;
-  font-size: 1.3rem;
-  letter-spacing: 0.3em;
-  color: var(--muted-text-color);
-}
-
+/* ===== Footer ===== */
 footer {
   background-color: var(--primary-color);
   color: var(--white);
   text-align: center;
   padding: 1.5rem;
-  height: 100px;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -322,58 +316,76 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* =====  Menü===== */
-/* ===== Menü-Styling ===== */
-.menu-section {
-  background-color: #fffdfb;
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
-}
-
-.menu-card {
-  background-color: #ffffff;
-  border: 1px solid #f0eae4;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.menu-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-.menu-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1.2rem;
-  color: var(--primary-color);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.menu-card ul {
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
 }
 
-.menu-card li {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dashed rgba(180, 160, 140, 0.15);
-  padding-bottom: 0.4rem;
-  font-size: 1.1rem;
-  color: var(--text-color);
+.social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: filter 0.3s ease;
 }
 
-.menu-card li span:last-child {
-  font-weight: 500;
-  color: var(--secondary-color);
+.social-icon:hover {
+  filter: none;
+}
+
+/* ===== Menüseite: Allgemein ===== */
+.menu-wrapper {
+  margin: 20px;
+}
+
+.menu-wrapper h1 {
+  text-align: center;
+}
+
+.menu-wrapper p {
+  padding: 1rem;
+}
+
+.menu-wrapper h2 {
+  white-space: nowrap;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+/* ===== Menüseite: Grids für Toast & Kaffee ===== */
+.toast-grid,
+.caffee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Karten-Design (Toast/Kaffee) ===== */
+.toast-card,
+.caffee-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+.toast-card img,
+.caffee-card img {
+  min-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.toast-card p,
+.caffee-card p {
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: #333;
 }
 
 /* ===== Sidebar – Sammelpass ===== */
@@ -381,30 +393,81 @@ footer a:hover {
   background-color: var(--white-beige);
   border: 2px dashed var(--secondary-color);
   border-radius: 12px;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 2rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
-  text-align: center;
   color: var(--primary-color);
-  transition: all 0.3s ease;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 215px;
+  max-width: 330px;
+  margin: 20px;
 }
 
-.sidebar h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+@media (min-width: 400px) {
+  .sidebar {
+    margin: 30px auto;
+  }
 }
 
-.sidebar p {
-  font-size: 1.05rem;
-  line-height: 1.5;
+/* ===== Kontaktformular ===== */
+.contact-wrapper {
+  padding: 10px;
 }
 
-.sidebar p::after {
-  content: "☕☕☕☕☕☕☕☕☕☕ ➤ 🎁";
-  display: block;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: var(--muted-text-color);
-  letter-spacing: 0.2em;
+.contact h2 {
+  text-align: center;
+}
+
+.contact {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: var(--white-beige);
+  color: var(--text-color);
+  border-radius: 5px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 1px solid var(--muted-text-color);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: inherit;
+  text-wrap-mode: wrap;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.contact-form button {
+  color: var(--white);
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--text-color);
 }

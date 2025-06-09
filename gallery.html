@@ -55,50 +55,74 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/espresso.jpg" alt="Espresso" />
-                <p class="caption">Espresso – kräftig & intensiv</p>
+                <img
+                  src="src/gallery1.jpg"
+                  alt="Barista Lena serviert Cappuccino"
+                />
+                <p class="caption">Cappuccino von Barista Lena</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/capuccino.jpg" alt="Cappuccino" />
-                <p class="caption">Cappuccino – cremig & klassisch</p>
+                <img
+                  src="src/gallery2.jpg"
+                  alt="Barista Lukas bei der Espresso-Zubereitung"
+                />
+                <p class="caption">Lukas brüht Espresso</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/latte.jpg" alt="Latte" />
-                <p class="caption">Latte – mild & milchig</p>
+                <img
+                  src="src/gallery3.jpg"
+                  alt="Barista bei der Vorbereitung Kafffee"
+                />
+                <p class="caption">Kaffeehandwerk mit Herz</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/flatwhite.jpg" alt="Flat White" />
-                <p class="caption">Flat White – sanft & harmonisch</p>
+                <img
+                  src="src/gallery4.jpg"
+                  alt="Gästepaar bei Kaffee und Gespräch"
+                />
+                <p class="caption">Gemütlich. Persönlich. MOKKA.</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/americano.jpg" alt="Americano" />
-                <p class="caption">Americano – leicht & ausgewogen</p>
+                <img
+                  src="src/gallery6.jpg"
+                  alt="Lächelnder Kellner begrüßt Gäste am Eingang"
+                />
+                <p class="caption">Willkomen bei MOKKA.</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/macchiato.jpg" alt="Macchiato" />
-                <p class="caption">Macchiato – Espresso mit Milchtupfer</p>
+                <img
+                  src="src/gallery5.jpg"
+                  alt="Kunden am Tisch, Stammkunde Sammelpass"
+                />
+                <p class="caption">Alltag bei MOKKA.</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/mocha.jpg" alt="Mocha" />
-                <p class="caption">Mocha – schokoladiger Genuss</p>
+                <img
+                  src="src/gallery7.jpg"
+                  alt="Treue Stammkundin trinkt Kaffee mit Hund"
+                />
+                <p class="caption">Treue Gäste täglich</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <img src="src/matcha.jpg" alt="Matcha" />
-                <p class="caption">Matcha – grün & belebend</p>
+                <img
+                  src="src/gallery8.jpg"
+                  alt="Kaffeepackungen mit Bio-Siegeln und pflanzlichen Milchsorten"
+                />
+                <p class="caption">Bioqualität & pflanzliche Vielfalt</p>
               </div>
             </div>
           </div>
@@ -112,51 +136,57 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer id="kontakt">
-      <p>&copy; 2025 MOKKA. Alle Rechte vorbehalten.</p>
-      <p>Kontakt: <a href="mailto:hello@kmokka.at">info@kaffeehaus.at</a></p>
+    <footer>
+      <p>&copy; 2025 <strong>MOKKA.</strong> Alle Rechte vorbehalten.</p>
+      <p>
+        Kontakt:
+        <a href="mailto:info@kaffeehaus.at">info@kaffeehaus.at</a>
+      </p>
+
+      <ul class="social-links" aria-label="Social Media">
+        <li>
+          <a
+            href="https://www.instagram.com/mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf Instagram"
+          >
+            <img
+              src="src/icon-instagram.svg"
+              alt="Instagram"
+              class="social-icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf Facebook"
+          >
+            <img
+              src="src/icon-facebook.svg"
+              alt="Facebook"
+              class="social-icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.tiktok.com/@mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf TikTok"
+          >
+            <img src="src/icon-tiktok.svg" alt="TikTok" class="social-icon" />
+          </a>
+        </li>
+      </ul>
     </footer>
 
     <!-- Swiper Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".mySwiper", {
-        slidesPerView: "auto",
-        centeredSlides: true,
-        loop: true,
-        spaceBetween: 30,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: false,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        effect: "coverflow",
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2,
-          slideShadows: false,
-        },
-      });
-
-      // 🛑 Autoplay pausieren bei Hover
-      const swiperContainer = document.querySelector(".swiper");
-
-      swiperContainer.addEventListener("mouseenter", () => {
-        swiper.autoplay.stop();
-      });
-
-      swiperContainer.addEventListener("mouseleave", () => {
-        swiper.autoplay.start();
-      });
-    </script>
+    <script src="script.js" defer></script>
   </body>
 </html>

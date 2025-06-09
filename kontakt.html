@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MOKKA. - Kontakt</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
   </head>
   <body>
-    <!-- HEADER -->
+    <!-- ========== HEADER ========== -->
     <header>
       <nav class="navbar" aria-label="Hauptnavigation">
         <div class="branding">
@@ -37,24 +33,93 @@
           <span class="line line3"></span>
         </label>
         <ul class="nav-links">
-          <li><a href="index">Über Uns</a></li>
+          <li><a href="index.html">Über Uns</a></li>
           <li><a href="menu.html">Menü</a></li>
           <li><a href="gallery.html">Galerie</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- HAUPTBEREICH: Galerie -->
-    <main>
-      <section class="kontakt">
-        <h2>Kontakte</h2>
+    <!-- ========== HAUPTINHALT ========== -->
+    <main class="contact-wrapper">
+      <section class="contact">
+        <h2>Schreib uns</h2>
+        <form
+          class="contact-form"
+          action="#"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <label for="file">Datei anhängen (optional)</label>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            accept=".pdf,.jpg,.png,.doc,.docx"
+          />
+
+          <button type="submit">Absenden</button>
+        </form>
       </section>
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer id="kontakt">
-      <p>&copy; 2025 MOKKA. Alle Rechte vorbehalten.</p>
-      <p>Kontakt: <a href="mailto:hello@kmokka.at">info@kaffeehaus.at</a></p>
+    <footer>
+      <p>&copy; 2025 <strong>MOKKA.</strong> Alle Rechte vorbehalten.</p>
+      <p>
+        Kontakt:
+        <a href="mailto:info@kaffeehaus.at">info@kaffeehaus.at</a>
+      </p>
+
+      <ul class="social-links" aria-label="Social Media">
+        <li>
+          <a
+            href="https://www.instagram.com/mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf Instagram"
+          >
+            <img
+              src="src/icon-instagram.svg"
+              alt="Instagram"
+              class="social-icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf Facebook"
+          >
+            <img
+              src="src/icon-facebook.svg"
+              alt="Facebook"
+              class="social-icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.tiktok.com/@mokka"
+            target="_blank"
+            rel="noopener"
+            aria-label="MOKKA auf TikTok"
+          >
+            <img src="src/icon-tiktok.svg" alt="TikTok" class="social-icon" />
+          </a>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>
